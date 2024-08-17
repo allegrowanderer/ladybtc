@@ -13,11 +13,6 @@ body, html {
 
 /* Background Image Styling */
 body {
-  background-image: url('/ladybg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   color: rgb(var(--foreground-rgb));
 }
 
@@ -46,8 +41,155 @@ body {
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Top Banner */
+.top-banner {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f2a900; /* Hover color */
+}
+
+/* 3D Slider Section */
+.advanced-slider {
+  position: relative;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  margin-top: 80px;
+  perspective: 1000px; /* Adds 3D perspective */
+}
+
+.advanced-slider .slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  max-width: 20%;
+  border: 5px solid white;
+  padding: 5px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.advanced-slider .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.advanced-slider .slide.active {
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  opacity: 1;
+  z-index: 3;
+}
+
+.advanced-slider .slide.prev {
+  transform: translate(-120%, -50%) scale(0.8) rotateY(-45deg);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.advanced-slider .slide.next {
+  transform: translate(20%, -50%) scale(0.8) rotateY(45deg);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.advanced-slider .slide.hidden {
+  transform: translate(50%, -50%) scale(0.6) rotateY(90deg);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Text Section */
+.text-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: 'Nanum Brush Script', cursive;
+}
+
+.text-section h1 {
+  font-size: 6rem; /* Increased font size 3x */
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 3rem; /* Increased font size 3x */
+  line-height: 1.5;
+}
+
+
+/* Video Section */
+.video-section {
+  position: relative;
+  height: 40vh;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Twitter Link Section */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.twitter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.twitter-logo {
+  width: 30px;
+  height: auto;
 }
