@@ -118,7 +118,9 @@ export default function Home() {
         </div>
 
         <div className="mb-4">
-          <span className="block text-gray-700 text-sm font-bold mb-2">Have you followed @ladybtc_?*</span>
+          <span className="block text-gray-700 text-sm font-bold mb-2">
+            Have you followed <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="text-blue-500">@ladybtc_</a>?*
+          </span>
           <label className="inline-flex items-center mr-4">
             <input 
               type="radio" 
@@ -150,7 +152,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
           >
-            Bonus
+            Guarantee
           </a>
 
           <button 
