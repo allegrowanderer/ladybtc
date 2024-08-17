@@ -5,40 +5,12 @@
 body, html {
   height: 100%;
   margin: 0;
+  background-color: #000000; /* Set the overall background color */
+  color: rgb(var(--foreground-rgb));
 }
 
 #root, #__next {
   height: 100%;
-}
-
-/* Background Image Styling */
-body {
-  color: rgb(var(--foreground-rgb));
-}
-
-/* Dark Mode Color Scheme */
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-
-  /* Background Override for Dark Mode */
-  body {
-    background-color: rgb(var(--background-start-rgb));
-    background-image: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    );
-  }
 }
 
 /* Top Banner */
@@ -141,13 +113,33 @@ body {
   z-index: 1;
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .advanced-slider {
+    height: 50vh; /* Increase the height on mobile */
+  }
+
+  .advanced-slider .slide {
+    max-width: 60%; /* Increase the size of the slides on mobile */
+  }
+
+  .advanced-slider .slide.prev,
+  .advanced-slider .slide.next {
+    transform: translate(-80%, -50%) scale(0.9); /* Adjust the position and scale */
+  }
+
+  .advanced-slider .slide.hidden {
+    transform: translate(20%, -50%) scale(0.7); /* Adjust for hidden slides */
+  }
+}
+
 /* Text Section */
 .text-section {
   padding: 40px 20px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* Set background to black */
   color: white;
-  font-family: 'Nanum Brush Script', cursive;
+  font-family: 'Nanum Brush Script', cursive; /* Apply Nanum Brush Script font */
 }
 
 .text-section h1 {
@@ -159,7 +151,6 @@ body {
   font-size: 3rem; /* Increased font size 3x */
   line-height: 1.5;
 }
-
 
 /* Video Section */
 .video-section {
