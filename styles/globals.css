@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#root, #__next {
+  height: 100%;
+}
+
+/* Background Image Styling */
+body {
+  background-image: url('/ladybg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: rgb(var(--foreground-rgb));
+}
+
+/* Dark Mode Color Scheme */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,16 +34,16 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* Background Override for Dark Mode */
+  body {
+    background-color: rgb(var(--background-start-rgb));
+    background-image: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    );
+  }
 }
 
 @layer utilities {
