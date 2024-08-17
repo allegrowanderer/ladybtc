@@ -163,9 +163,9 @@ export default function Home() {
           </button>
         </div>
         <div className="flex items-center justify-center mt-6">
-          <span className="text-xl text-black mr-4">Follow on</span>
-          <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer">
-            <img src="/xlogo.png" alt="X logo" className="h-12" />
+          <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="flex items-center text-xl text-black">
+            Follow us on
+            <img src="/xlogo.png" alt="X logo" className="h-8 ml-2" />
           </a>
         </div>
       </div>
