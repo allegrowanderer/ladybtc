@@ -147,7 +147,7 @@ export default function Home() {
 
         <div className="mt-6 flex justify-center space-x-4">
           <a 
-            href="https://twitter.com/intent/tweet?text=LADY%0ALADY%0ALADY%0A%40ladybtc_" 
+            href="https://twitter.com/intent/tweet?text=LADY%0ALADY%0ALADY%0A%40ladybtc_%20ladybtc.io" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
