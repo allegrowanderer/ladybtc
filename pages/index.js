@@ -34,28 +34,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    let loopStartTime = video.duration - 0.19; // Last 0.6 seconds
-
-    const handleVideoEnd = () => {
-      video.currentTime = loopStartTime;
-      video.play();
-    };
-
-    const handleLoadedMetadata = () => {
-      loopStartTime = video.duration - 0.6; // Recalculate in case video length changes
-    };
-
-    video.addEventListener('ended', handleVideoEnd);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-    };
-  }, []);
-
   return (
     <div>
       {/* Top Banner without Navigation and Logo */}

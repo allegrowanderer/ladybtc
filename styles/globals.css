@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body, html {
   height: 100%;
   margin: 0;
@@ -93,7 +92,6 @@ body, html {
   display: block;
 }
 
-
 .advanced-slider .slide.active {
   transform: translate(-50%, -50%) scale(1) rotateY(0deg);
   opacity: 1;
@@ -168,7 +166,6 @@ body, html {
   object-fit: cover;
 }
 
-
 /* Twitter Link Section */
 .footer {
   padding: 20px;
@@ -225,7 +222,3 @@ body, html {
   position: relative;
   z-index: 3; /* Ensure the text is above the ink effect */
 }
-
-
-
-
