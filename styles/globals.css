@@ -181,12 +181,14 @@ body, html {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+  font-family: 'Permanent Marker', cursive; /* Set the font to Permanent Marker */
 }
 
 .twitter-logo {
   width: 30px;
   height: auto;
 }
+
 
 /* Whitelist Link Hover Effect */
 .nav-link {
