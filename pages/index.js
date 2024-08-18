@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 
 export default function Home() {
   const sliderRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     let index = 0;
@@ -34,21 +34,35 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    let loopStartTime = video.duration - 0.19; // Last 0.6 seconds
+
+    const handleVideoEnd = () => {
+      video.currentTime = loopStartTime;
+      video.play();
+    };
+
+    const handleLoadedMetadata = () => {
+      loopStartTime = video.duration - 0.6; // Recalculate in case video length changes
+    };
+
+    video.addEventListener('ended', handleVideoEnd);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    };
+  }, []);
+
   return (
     <div>
-      {/* Top Banner with Navigation */}
+      {/* Top Banner without Navigation and Logo */}
       <header className="top-banner">
         <div className="container">
-          <div className="logo">
-            <img src="/logo.png" alt="Logo" className="logo-img" />
-          </div>
           <nav className="nav-links">
-            <Link href="/" className="nav-link">
-              Home
-            </Link>
-            <Link href="/whitelist" className="nav-link">
-              Whitelist
-            </Link>
+            {/* Navigation has been removed for now */}
           </nav>
         </div>
       </header>
@@ -96,7 +110,7 @@ export default function Home() {
 
       {/* Video Section */}
       <div className="video-section">
-        <video autoPlay loop muted playsInline className="background-video">
+        <video ref={videoRef} autoPlay muted playsInline className="background-video">
           <source src="/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
