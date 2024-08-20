@@ -36,8 +36,17 @@ export default function Home() {
 
   return (
     <div>
+      {/* Top Banner without Navigation and Logo */}
+      <header className="top-banner">
+        <div className="container">
+          <nav className="nav-links">
+            {/* Navigation has been removed for now */}
+          </nav>
+        </div>
+      </header>
+
       {/* Advanced Slider Section */}
-      <div ref={sliderRef} className="advanced-slider" style={{ marginTop: 0 }}>
+      <div ref={sliderRef} className="advanced-slider">
         <div className="slide">
           <img src="/s1.png" alt="Sneak Peek 1" />
         </div>
