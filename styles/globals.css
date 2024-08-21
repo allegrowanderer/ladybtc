@@ -6,8 +6,8 @@
 
 body, html {
   height: 100%;
-  margin: 0; /* Ensure no margin is added */
-  padding: 0; /* Ensure no padding is added */
+  margin: 0;
+  padding: 0;
   background-image: url('/indexladybg.png'); /* Set the new background image */
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,12 +18,12 @@ body, html {
 
 
 
+
 #root, #__next {
   height: 100%;
 }
 
 .top-banner {
-  background-color: rgba(0, 0, 0, 0.05); /* Reduced opacity for top banner background */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,9 @@ body, html {
   width: 100%;
   top: 0; /* Ensure it’s at the top */
   z-index: 1000;
+  margin: 0; /* Ensure no margin is added */
 }
+
 
 
 .logo-container {
@@ -72,10 +74,16 @@ body, html {
 .footer {
   padding: 5.88px; /* Adjust padding */
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Remove the text section styles */
 .text-section {
   display: none; /* Hide the text section */
+}
+
+/* Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

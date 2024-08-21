@@ -29,9 +29,7 @@ export default function Home() {
 
       {/* Twitter Link Section */}
       <footer className="footer">
-        <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="twitter-link">
-          Follow us on Twitter
-        </a>
+      
       </footer>
     </div>
   );
