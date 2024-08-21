@@ -146,7 +146,7 @@ export default function Home() {
         </div>
 
         <div className="mt-6 flex justify-center space-x-4">
-          <a 
+         {/* <a 
             href="https://twitter.com/intent/tweet?text=LADY%0ALADY%0ALADY%0A%40ladybtc_%20ladybtc.io/whitelist" 
             target="_blank" 
             rel="noopener noreferrer"
@@ -154,7 +154,7 @@ export default function Home() {
           >
             Guarantee
           </a>
-
+        */}
           <button 
             onClick={handleSubmit}
             className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
