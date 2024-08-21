@@ -1,12 +1,20 @@
+import styles from './index.module.css'; // Import the CSS module
+
 export default function Home() {
   return (
-    <div>
+    <div className={styles.background}>
       {/* Top Banner with HOME and WHITELIST Links */}
       <header className="top-banner">
-        <nav className="nav-links">
-          <a href="/" className="home-link">HOME</a>
-          <a href="/whitelist" className="whitelist-link">WHITELIST</a>
-        </nav>
+        <div className="logo-container">
+          <img src="/ladylogo.png" alt="Logo" className="lady-logo" />
+        </div>
+        <div className="nav-container">
+          <a href="http://ladybtc.io" className="home-link">HOME</a>
+          <a href="http://ladybtc.io/whitelist" className="whitelist-link">WHITELIST</a>
+          <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer">
+            <img src="/xlogo.png" alt="Twitter Logo" className="xlogo" />
+          </a>
+        </div>
       </header>
 
       {/* Text Section */}
@@ -18,6 +26,13 @@ export default function Home() {
         <p>Price: 0.001 btc</p>
         <p>Date: TBA</p>
       </section>
+
+      {/* Twitter Link Section */}
+      <footer className="footer">
+        <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="twitter-link">
+          Follow us on Twitter
+        </a>
+      </footer>
     </div>
   );
 }

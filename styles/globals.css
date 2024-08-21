@@ -6,8 +6,9 @@
 
 body, html {
   height: 100%;
-  margin: 0;
-  background-image: url('/ladybg.jpg'); /* Set the new background image */
+  margin: 0; /* Ensure no margin is added */
+  padding: 0; /* Ensure no padding is added */
+  background-image: url('/indexladybg.png'); /* Set the new background image */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,20 +16,38 @@ body, html {
   color: rgb(var(--foreground-rgb));
 }
 
+
+
 #root, #__next {
   height: 100%;
 }
 
 .top-banner {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.05); /* Reduced opacity for top banner background */
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-right: 2cm;
-  padding-top: 1cm;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1cm 2cm;
   position: fixed;
   width: 100%;
+  top: 0; /* Ensure it’s at the top */
   z-index: 1000;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1cm; /* Space between HOME, WHITELIST, and X Logo */
+}
+
+.lady-logo {
+  height: 5rem; /* Adjust the size as needed */
 }
 
 .home-link,
@@ -40,45 +59,23 @@ body, html {
   transition: color 0.3s ease;
 }
 
-.home-link {
-  margin-right: 1cm; /* Space between HOME and WHITELIST */
-}
-
 .home-link:hover,
 .whitelist-link:hover {
   color: #f2a900; /* Hover color */
 }
 
 .xlogo {
-  height: 1.764rem; /* Same height as the text */
-  margin-left: 0.5cm; /* Space between WHITELIST and xlogo */
+  height: 2.646rem; /* Increased size by 1.5x */
   vertical-align: middle; /* Align the logo vertically with the text */
-}
-
-.text-section {
-  min-height: 100vh; /* Ensure the black background covers the full screen */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 11.76px 5.88px; /* Adjust padding */
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.8); /* Set background to black with reduced opacity */
-  color: white;
-  font-family: 'Permanent Marker', cursive;
-}
-
-.text-section h1 {
-  font-size: 5.292rem; /* Further reduced font size */
-  margin-bottom: 5.88px; /* Adjust margin */
-}
-
-.text-section p {
-  font-size: 2.646rem; /* Further reduced font size */
-  line-height: 1.5;
 }
 
 .footer {
   padding: 5.88px; /* Adjust padding */
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Remove the text section styles */
+.text-section {
+  display: none; /* Hide the text section */
 }
