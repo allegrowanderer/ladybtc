@@ -29,26 +29,8 @@ export default function Home() {
       return;
     }
 
-    // Check if the wallet address has already been submitted
-    const { data, error } = await supabase
-      .from('ordinals_data') // Replace with your table name
-      .select('*')
-      .eq('wallet', wallet);
-
-    if (error) {
-      console.error('Error checking wallet:', error);
-      setMessageType('error');
-      setMessage('There was an error checking the wallet address. Please try again.');
-      return;
-    }
-
-    if (data && data.length > 0) {
-      setMessageType('error');
-      setMessage('This wallet address has already been submitted.');
-      return;
-    }
-
-    // If the wallet address is not a duplicate, insert the new record
+    // Skip checking if the wallet address is already submitted
+    // Insert the new record directly
     const { insertError } = await supabase
       .from('ordinals_data') // Replace with your table name
       .insert([{ username, wallet }]);
@@ -119,7 +101,7 @@ export default function Home() {
 
         <div className="mb-4">
           <span className="block text-gray-700 text-sm font-bold mb-2">
-            Have you followed <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="text-blue-500">@ladybtc_</a>?* (<a href="https://x.com/ladybtc_/status/1827029715216990608" target="_blank" rel="noopener noreferrer" className="text-blue-500">LIKE+RT THIS TWEET FOR +5 POINTS</a>)
+            Have you followed <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="text-blue-500">@ladybtc_</a>?* (<a href="https://x.com/ladybtc_/status/1827029715216990608" target="_blank" rel="noopener noreferrer" className="text-blue-500">LIKE+RT and COMMENT "LADY" THIS TWEET FOR +5 POINTS</a>)
           </span>
           <label className="inline-flex items-center mr-4">
             <input 
@@ -146,15 +128,6 @@ export default function Home() {
         </div>
 
         <div className="mt-6 flex justify-center space-x-4">
-         {/* <a 
-            href="https://twitter.com/intent/tweet?text=LADY%0ALADY%0ALADY%0A%40ladybtc_%20ladybtc.io/whitelist" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
-          >
-            Guarantee
-          </a>
-        */}
           <button 
             onClick={handleSubmit}
             className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
