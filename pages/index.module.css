@@ -1,9 +1,8 @@
 .background {
-    background-image: url('/indexladybg.png'); /* Background image for index page */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh; /* Ensure full viewport height */
-  }
-  
+  background-image: url('/indexladybg.png'); /* Background image for index page */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* Ensure full viewport height */
+}

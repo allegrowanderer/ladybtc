@@ -10,7 +10,7 @@ export default function Home() {
         </div>
         <div className="nav-container">
           <a href="http://ladybtc.io" className="home-link">HOME</a>
-          <a href="http://ladybtc.io/whitelist" className="whitelist-link">WHITELIST</a>
+          <a href="http://ladybtc.io/whitelist2" className="whitelist-link">WHITELIST</a>
           <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer">
             <img src="/xlogo.png" alt="Twitter Logo" className="xlogo" />
           </a>
