@@ -101,7 +101,7 @@ export default function Home() {
 
         <div className="mb-4">
           <span className="block text-gray-700 text-sm font-bold mb-2">
-            Have you followed <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="text-blue-500">@ladybtc_</a>?* (<a href="https://x.com/ladybtc_/status/1827389361018560628" target="_blank" rel="noopener noreferrer" className="text-blue-500">LIKE+RT and COMMENT "LADY" THIS TWEET</a>)
+            Have you followed <a href="https://x.com/ladybtc_" target="_blank" rel="noopener noreferrer" className="text-blue-500">@ladybtc_</a>?* (<a href="https://x.com/ladybtc_/status/1827389361018560628" target="_blank" rel="noopener noreferrer" className="text-blue-500">LIKE+RT THIS TWEET</a>)
           </span>
           <label className="inline-flex items-center mr-4">
             <input 
