@@ -1,8 +1,153 @@
+/* Global Styles */
 .background {
-  background-image: url('/indexladybg.png'); /* Background image for index page */
+  background-image: url('/ladybg.jpg');
   background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-position: center;
   background-attachment: fixed;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Styles */
+.topBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5); /* Background with slight opacity */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.ladyLogo {
+  height: 5rem; /* Adjust as needed */
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between links and logo */
+}
+
+.homeLink, .whitelistLink {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem; /* Font size */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.homeLink:hover, .whitelistLink:hover {
+  color: #f2a900; /* Hover color */
+}
+
+.xlogo {
+  height: 2.5rem; /* Adjust size as needed */
+}
+
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: absolute; /* Position it absolutely within the header */
+  top: 1rem; /* Adjust to align with top padding */
+  right: 2rem; /* Position it to the right */
+}
+
+.hamburger div {
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: white;
+}
+
+/* Mobile Menu Styles */
+.navMenu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  text-align: center;
+}
+
+.navMenu a {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.navMenu.show {
+  display: flex; /* Show when the menu is open */
+}
+
+/* Center Image Styles */
+.centerImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: 3rem; /* Space for header */
+}
+
+.centerImage {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer Styles */
+.footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .topBanner {
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: flex; /* Show the hamburger menu on mobile */
+  }
+
+  .navContainer {
+    display: none; /* Hide the regular navigation links on mobile */
+  }
+
+  .navMenu {
+    display: none; /* Hide the menu by default on mobile */
+  }
+
+  .navMenu.show {
+    display: flex; /* Show the menu when it is open */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide the hamburger menu on desktop */
+  }
+
+  .navMenu {
+    display: none; /* Hide the menu on desktop */
+  }
 }
