@@ -7,8 +7,11 @@ export default function Home() {
   const [followed, setFollowed] = useState(''); // To track the selected radio button
   const [message, setMessage] = useState(''); // To store the message
   const [messageType, setMessageType] = useState(''); // To differentiate between success and error
+  const [isClosed, setIsClosed] = useState(true); // New state to control button display
 
   const handleSubmit = async () => {
+    if (isClosed) return;
+
     setMessage(''); // Clear previous messages
 
     if (!username || !wallet) {
@@ -130,9 +133,12 @@ export default function Home() {
         <div className="mt-6 flex justify-center space-x-4">
           <button 
             onClick={handleSubmit}
-            className="bg-[#f2a900] hover:bg-[#f2a900] text-white font-bold py-2 px-4 rounded"
+            disabled={isClosed} // Disable the button if isClosed is true
+            className={`${
+              isClosed ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#f2a900] hover:bg-[#f2a900]'
+            } text-white font-bold py-2 px-4 rounded`}
           >
-            Send
+            {isClosed ? 'Closed' : 'Send'}
           </button>
         </div>
         <div className="flex items-center justify-center mt-6">
